@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>KS Digital Services | Government & Online Services</title>
+<title>KS Digital Services | Trusted Online Service Center</title>
 
 <meta name="description"
-content="KS Digital Services Hyderabad offers Passport, PAN, Aadhar, Voter ID, Certificates, GST, MSME, Licenses, Ticket Booking and Exam Applications.">
+content="KS Digital Services Hyderabad provides Passport, PAN, Aadhar, Certificates, GST, Licenses, Ticket Booking and Online Applications.">
+
+<meta name="keywords"
+content="KS Digital Services, Passport Agent Hyderabad, PAN Card, Aadhar, GST, Certificates, Online Services">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
 
-/* ===== BASE ===== */
+/* BASE */
 
 body{
     font-family:system-ui,sans-serif;
@@ -26,7 +30,7 @@ body{
 /* NAV */
 
 .navbar{
-    background:white;
+    background:#fff;
     border-bottom:1px solid #e5e7eb;
 }
 
@@ -48,7 +52,7 @@ body{
     color:#1e40af;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{
     padding:70px 15px;
@@ -68,12 +72,11 @@ body{
 .category h4{
     border-left:4px solid #2563eb;
     padding-left:12px;
-    margin-bottom:20px;
 }
 
 .services-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
     gap:18px;
 }
 
@@ -81,7 +84,8 @@ body{
     background:white;
     border:1px solid #e5e7eb;
     border-radius:14px;
-    padding:15px;
+    padding:22px 15px;
+    min-height:160px;
     text-align:center;
     cursor:pointer;
     transition:.25s;
@@ -93,42 +97,48 @@ body{
 }
 
 .service-card img{
-    width:60px;
-    height:60px;
+    width:90px;
+    height:90px;
     object-fit:contain;
-    margin-bottom:8px;
+    margin-bottom:12px;
 }
 
 .service-card h6{
-    font-size:.85rem;
     font-weight:600;
 }
 
 /* REVIEWS */
 
-.review{
+.review-box{
     background:white;
     border:1px solid #e5e7eb;
     border-radius:12px;
-    padding:20px;
-    margin-bottom:15px;
+    padding:25px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
 }
 
 /* CONTACT */
 
 .contact-box{
     background:white;
-    border-radius:12px;
     border:1px solid #e5e7eb;
+    border-radius:12px;
     padding:25px;
-}
-
-/* MAP */
-
-.map{
-    border-radius:12px;
-    overflow:hidden;
-    border:1px solid #e5e7eb;
 }
 
 /* FOOTER */
@@ -162,9 +172,15 @@ footer{
 
 .hero h1{font-size:2rem}
 
+.service-card img{
+    width:75px;
+    height:75px;
+}
+
 }
 
 </style>
+
 </head>
 
 
@@ -185,11 +201,10 @@ footer{
 <div id="nav" class="collapse navbar-collapse">
 
 <ul class="navbar-nav ms-auto">
-
 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
 <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-
 </ul>
 
 </div>
@@ -228,8 +243,6 @@ WhatsApp Now
 </div>
 
 
-<!-- GOVT -->
-
 <div class="category">
 
 <h4>Government Documents</h4>
@@ -237,34 +250,32 @@ WhatsApp Now
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Passport')">
-<img src="./passport.png"><h6>Passport</h6>
+<img src="./passport.png" loading="lazy"><h6>Passport</h6>
 </div>
 
 <div class="service-card" onclick="wa('PAN Card')">
-<img src="./pan.png"><h6>PAN Card</h6>
+<img src="./pan.png" loading="lazy"><h6>PAN Card</h6>
 </div>
 
 <div class="service-card" onclick="wa('Aadhar Update')">
-<img src="./aadhar.png"><h6>Aadhar Update</h6>
+<img src="./aadhar.png" loading="lazy"><h6>Aadhar Update</h6>
 </div>
 
 <div class="service-card" onclick="wa('Voter ID')">
-<img src="./voter.png"><h6>Voter ID</h6>
+<img src="./voter.png" loading="lazy"><h6>Voter ID</h6>
 </div>
 
 <div class="service-card" onclick="wa('Birth Certificate')">
-<img src="./birth.png"><h6>Birth Certificate</h6>
+<img src="./birth.png" loading="lazy"><h6>Birth Certificate</h6>
 </div>
 
 <div class="service-card" onclick="wa('Marriage Certificate')">
-<img src="./marriage.png"><h6>Marriage Certificate</h6>
+<img src="./marriage.png" loading="lazy"><h6>Marriage Certificate</h6>
 </div>
 
 </div>
 </div>
 
-
-<!-- BUSINESS -->
 
 <div class="category">
 
@@ -273,54 +284,50 @@ WhatsApp Now
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('GST Registration')">
-<img src="./gst.png"><h6>GST Registration</h6>
+<img src="./gst.png" loading="lazy"><h6>GST Registration</h6>
 </div>
 
-<div class="service-card" onclick="wa('UDYAM / MSME')">
-<img src="./msme.png"><h6>UDYAM / MSME</h6>
+<div class="service-card" onclick="wa('UDYAM MSME')">
+<img src="./msme.png" loading="lazy"><h6>UDYAM / MSME</h6>
 </div>
 
 <div class="service-card" onclick="wa('Trade License')">
-<img src="./trade.png"><h6>Trade License</h6>
+<img src="./trade.png" loading="lazy"><h6>Trade License</h6>
 </div>
 
 <div class="service-card" onclick="wa('Food License')">
-<img src="./food.png"><h6>Food License</h6>
+<img src="./food.png" loading="lazy"><h6>Food License</h6>
 </div>
 
 <div class="service-card" onclick="wa('Labour License')">
-<img src="./labour.png"><h6>Labour License</h6>
+<img src="./labour.png" loading="lazy"><h6>Labour License</h6>
 </div>
 
 </div>
 </div>
 
-
-<!-- TRAVEL -->
 
 <div class="category">
 
-<h4>Travel & Temple Bookings</h4>
+<h4>Travel & Bookings</h4>
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Bus Tickets')">
-<img src="icons/bus.png"><h6>Bus Tickets</h6>
+<img src="./bus.png" loading="lazy"><h6>Bus Tickets</h6>
 </div>
 
 <div class="service-card" onclick="wa('Train Tickets')">
-<img src="icons/train.png"><h6>Train Tickets</h6>
+<img src="./train.png" loading="lazy"><h6>Train Tickets</h6>
 </div>
 
 <div class="service-card" onclick="wa('TTD Booking')">
-<img src="icons/temple.png"><h6>TTD Booking</h6>
+<img src="./temple.png" loading="lazy"><h6>TTD Booking</h6>
 </div>
 
 </div>
 </div>
 
-
-<!-- EXAMS -->
 
 <div class="category">
 
@@ -328,40 +335,38 @@ WhatsApp Now
 
 <div class="services-grid">
 
-<div class="service-card" onclick="wa('TET / NET')">
-<img src="icons/exam.png"><h6>TET / NET</h6>
+<div class="service-card" onclick="wa('TET NET')">
+<img src="./exam.png" loading="lazy"><h6>TET / NET</h6>
 </div>
 
-<div class="service-card" onclick="wa('EAMCET / Polycet')">
-<img src="icons/exam.png"><h6>EAMCET / Polycet</h6>
+<div class="service-card" onclick="wa('EAMCET Polycet')">
+<img src="./exam.png" loading="lazy"><h6>EAMCET / Polycet</h6>
 </div>
 
-<div class="service-card" onclick="wa('ECET / ICET')">
-<img src="icons/exam.png"><h6>ECET / ICET</h6>
+<div class="service-card" onclick="wa('ECET ICET')">
+<img src="./exam.png" loading="lazy"><h6>ECET / ICET</h6>
 </div>
 
 <div class="service-card" onclick="wa('Scholarship')">
-<img src="icons/scholar.png"><h6>Scholarship</h6>
+<img src="./scholar.png" loading="lazy"><h6>Scholarship</h6>
 </div>
 
 </div>
 </div>
 
-
-<!-- UTILITY -->
 
 <div class="category">
 
-<h4>Utility & Online Services</h4>
+<h4>Utility Services</h4>
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Utility Services')">
-<img src="icons/utility.png"><h6>Utility Services</h6>
+<img src="./utility.png" loading="lazy"><h6>Utility Services</h6>
 </div>
 
 <div class="service-card" onclick="wa('Online Forms')">
-<img src="icons/online.png"><h6>Online Forms</h6>
+<img src="./online.png" loading="lazy"><h6>Online Forms</h6>
 </div>
 
 </div>
@@ -378,12 +383,42 @@ WhatsApp Now
 <div class="container">
 
 <div class="section-title text-center mb-4">
-<h2>Customer Reviews</h2>
+<h2>Google Reviews</h2>
 </div>
 
-<div class="review">"Very fast passport service." – Murthy</div>
-<div class="review">"PAN card done easily." – Raju</div>
-<div class="review">"All work done in one place." – Vishnu</div>
+<div class="review-box">
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin"
+width="100%"
+height="350"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+
+<div class="container">
+
+<div class="section-title text-center mb-4">
+<h2>Our Office Gallery</h2>
+</div>
+
+<div class="gallery">
+
+<img src="./shop1.jpg" loading="lazy">
+<img src="./shop2.jpg" loading="lazy">
+<img src="./shop3.jpg" loading="lazy">
+
+</div>
 
 </div>
 </section>
@@ -396,7 +431,7 @@ WhatsApp Now
 <div class="container">
 
 <div class="section-title text-center mb-4">
-<h2>Contact & Location</h2>
+<h2>Contact </h2>
 </div>
 
 <div class="row g-4">
@@ -406,7 +441,7 @@ WhatsApp Now
 <div class="contact-box text-center">
 
 <p>📞 +91 7893845696</p>
-<p>📍 Hyderabad</p>
+<p>📍 Moula Ali</p>
 <p>⏰ 7 AM – 9:30 PM</p>
 
 <a href="https://wa.me/7893845696" class="btn btn-success w-100 mt-3">
@@ -418,18 +453,7 @@ WhatsApp Now
 </div>
 
 
-<div class="col-md-6">
 
-<div class="map">
-
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin" 
-    width="600" height="450" style="border:0;" 
-    allowfullscreen="" loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-</div>
-
-</div>
 
 </div>
 
@@ -446,7 +470,7 @@ WhatsApp Now
 </footer>
 
 
-<!-- FLOAT -->
+<!-- WHATSAPP -->
 
 <a href="https://wa.me/7893845696" class="whatsapp">
 <i class="bi bi-whatsapp"></i>
@@ -470,5 +494,7 @@ window.open(
 
 </script>
 
+
 </body>
 </html>
+
