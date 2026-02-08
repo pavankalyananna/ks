@@ -77,15 +77,15 @@ body{
 .services-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:18px;
+    gap:20px;
 }
 
 .service-card{
     background:white;
     border:1px solid #e5e7eb;
     border-radius:14px;
-    padding:22px 15px;
-    min-height:190px;
+    padding:24px 15px 22px;
+    min-height:220px;
     text-align:center;
     cursor:pointer;
     transition:.25s;
@@ -93,7 +93,7 @@ body{
 }
 
 .service-card:hover{
-    box-shadow:0 6px 18px rgba(0,0,0,.1);
+    box-shadow:0 8px 22px rgba(0,0,0,.12);
     transform:translateY(-4px);
 }
 
@@ -103,7 +103,7 @@ body{
     width:130px;
     height:150px;
     object-fit:contain;
-    margin-bottom:14px;
+    margin-bottom:12px;
     transition:transform .3s ease;
 }
 
@@ -113,33 +113,60 @@ body{
 
 .service-card h6{
     font-weight:600;
+    margin-bottom:4px;
 }
 
-/* ================= BADGES ================= */
+/* ================= TAGS ================= */
+
+.service-tags{
+    margin-top:6px;
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    flex-wrap:wrap;
+}
 
 .popular-badge{
-    position:absolute;
-    top:8px;
-    left:8px;
     background:#f97316;
     color:white;
     font-size:.7rem;
     font-weight:700;
-    padding:3px 8px;
-    border-radius:12px;
-    box-shadow:0 2px 6px rgba(0,0,0,.2);
+    padding:3px 9px;
+    border-radius:10px;
 }
 
 .sameday-badge{
-    position:absolute;
-    top:8px;
-    right:8px;
     background:#16a34a;
     color:white;
     font-size:.7rem;
     font-weight:700;
-    padding:3px 8px;
-    border-radius:12px;
+    padding:3px 9px;
+    border-radius:10px;
+}
+
+/* ================= POPULAR GLOW ================= */
+
+.popular-card{
+    border:2px solid #fb923c;
+    box-shadow:0 0 12px rgba(251,146,60,.25);
+}
+
+.popular-card:hover{
+    box-shadow:0 0 20px rgba(251,146,60,.4);
+}
+
+/* ================= RECOMMENDED RIBBON ================= */
+
+.recommended{
+    position:absolute;
+    top:10px;
+    right:-30px;
+    background:#2563eb;
+    color:white;
+    font-size:.65rem;
+    font-weight:700;
+    padding:4px 35px;
+    transform:rotate(45deg);
     box-shadow:0 2px 6px rgba(0,0,0,.2);
 }
 
@@ -211,6 +238,11 @@ footer{
 .service-card img{
     width:110px;
     height:120px;
+}
+
+.recommended{
+    right:-25px;
+    font-size:.6rem;
 }
 
 }
@@ -285,260 +317,100 @@ WhatsApp Now
 
 <div class="services-grid">
 
+
 <!-- Passport -->
-<div class="service-card" onclick="wa('Passport')">
+<div class="service-card popular-card" onclick="wa('Passport')">
+
+<div class="recommended">RECOMMENDED</div>
 
 <img src="./passport.png" loading="lazy">
+
 <h6>Passport</h6>
-    <span class="popular-badge">POPULAR</span>
-<span class="sameday-badge">SAME DAY</span>
-</div>
 
-<!-- PAN -->
-<div class="service-card" onclick="wa('PAN Card')">
-
-<img src="./pan.png" loading="lazy">
-<h6>PAN Card</h6>
-    <span class="popular-badge">POPULAR</span>
-<span class="sameday-badge">SAME DAY</span>
-</div>
-
-<!-- Aadhar -->
-<div class="service-card" onclick="wa('Aadhar Update')">
+<div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
-<img src="./aadhar.png" loading="lazy">
-<h6>Aadhar Update</h6>
 </div>
+
+</div>
+
+
+<!-- PAN -->
+<div class="service-card popular-card" onclick="wa('PAN Card')">
+
+<div class="recommended">RECOMMENDED</div>
+
+<img src="./pan.png" loading="lazy">
+
+<h6>PAN Card</h6>
+
+<div class="service-tags">
+<span class="popular-badge">POPULAR</span>
+<span class="sameday-badge">SAME DAY</span>
+</div>
+
+</div>
+
+
+<!-- Aadhar -->
+<div class="service-card popular-card" onclick="wa('Aadhar Update')">
+
+<div class="recommended">RECOMMENDED</div>
+
+<img src="./aadhar.png" loading="lazy">
+
+<h6>Aadhar Update</h6>
+
+<div class="service-tags">
+<span class="popular-badge">POPULAR</span>
+<span class="sameday-badge">SAME DAY</span>
+</div>
+
+</div>
+
 
 <!-- Voter -->
 <div class="service-card" onclick="wa('Voter ID')">
-<span class="sameday-badge">SAME DAY</span>
+
 <img src="./voter.png" loading="lazy">
+
 <h6>Voter ID</h6>
+
+<div class="service-tags">
+<span class="sameday-badge">SAME DAY</span>
 </div>
+
+</div>
+
 
 <!-- Birth -->
 <div class="service-card" onclick="wa('Birth Certificate')">
-<span class="sameday-badge">SAME DAY</span>
+
 <img src="./birth.png" loading="lazy">
+
 <h6>Birth Certificate</h6>
+
+<div class="service-tags">
+<span class="sameday-badge">SAME DAY</span>
 </div>
+
+</div>
+
 
 <!-- Marriage -->
 <div class="service-card" onclick="wa('Marriage Certificate')">
-<span class="sameday-badge">SAME DAY</span>
+
 <img src="./marriage.png" loading="lazy">
+
 <h6>Marriage Certificate</h6>
-</div>
 
-</div>
-</div>
-
-
-<div class="category">
-
-<h4>Business & Licenses</h4>
-
-<div class="services-grid">
-
-<div class="service-card" onclick="wa('GST Registration')">
+<div class="service-tags">
 <span class="sameday-badge">SAME DAY</span>
-<img src="./gst.png" loading="lazy">
-<h6>GST Registration</h6>
-</div>
-
-<div class="service-card" onclick="wa('UDYAM MSME')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./msme.png" loading="lazy">
-<h6>UDYAM / MSME</h6>
-</div>
-
-<div class="service-card" onclick="wa('Trade License')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./trade.png" loading="lazy">
-<h6>Trade License</h6>
-</div>
-
-<div class="service-card" onclick="wa('Food License')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./food.png" loading="lazy">
-<h6>Food License</h6>
-</div>
-
-<div class="service-card" onclick="wa('Labour License')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./labour.png" loading="lazy">
-<h6>Labour License</h6>
-</div>
-
-</div>
-</div>
-
-
-<div class="category">
-
-<h4>Travel & Bookings</h4>
-
-<div class="services-grid">
-
-<div class="service-card" onclick="wa('Bus Tickets')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./bus.png" loading="lazy">
-<h6>Bus Tickets</h6>
-</div>
-
-<div class="service-card" onclick="wa('Train Tickets')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./train.png" loading="lazy">
-<h6>Train Tickets</h6>
-</div>
-
-<div class="service-card" onclick="wa('TTD Booking')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./temple.png" loading="lazy">
-<h6>TTD Booking</h6>
-</div>
-
-</div>
-</div>
-
-
-<div class="category">
-
-<h4>Exam & Education</h4>
-
-<div class="services-grid">
-
-<div class="service-card" onclick="wa('TET NET')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./exam.png" loading="lazy">
-<h6>TET / NET</h6>
-</div>
-
-<div class="service-card" onclick="wa('EAMCET Polycet')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./exam.png" loading="lazy">
-<h6>EAMCET / Polycet</h6>
-</div>
-
-<div class="service-card" onclick="wa('ECET ICET')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./exam.png" loading="lazy">
-<h6>ECET / ICET</h6>
-</div>
-
-<div class="service-card" onclick="wa('Scholarship')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./scholar.png" loading="lazy">
-<h6>Scholarship</h6>
-</div>
-
-</div>
-</div>
-
-
-<div class="category">
-
-<h4>Utility Services</h4>
-
-<div class="services-grid">
-
-<div class="service-card" onclick="wa('Utility Services')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./utility.png" loading="lazy">
-<h6>Utility Services</h6>
-</div>
-
-<div class="service-card" onclick="wa('Online Forms')">
-<span class="sameday-badge">SAME DAY</span>
-<img src="./online.png" loading="lazy">
-<h6>Online Forms</h6>
-</div>
-
-</div>
-</div>
-
-</div>
-</section>
-
-
-<!-- REVIEWS -->
-
-<section class="section bg-light" id="reviews">
-
-<div class="container">
-
-<div class="section-title text-center mb-4">
-<h2>Google Reviews</h2>
-</div>
-
-<div class="review-box">
-
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin"
-width="100%"
-height="350"
-style="border:0;"
-loading="lazy">
-</iframe>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="section" id="gallery">
-
-<div class="container">
-
-<div class="section-title text-center mb-4">
-<h2>Our Office Gallery</h2>
-</div>
-
-<div class="gallery">
-
-<img src="./shop1.jpg" loading="lazy">
-<img src="./shop2.jpg" loading="lazy">
-<img src="./shop3.jpg" loading="lazy">
-
-</div>
-
-</div>
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section" id="contact">
-
-<div class="container">
-
-<div class="section-title text-center mb-4">
-<h2>Contact</h2>
-</div>
-
-<div class="row g-4">
-
-<div class="col-md-6">
-
-<div class="contact-box text-center">
-
-<p>📞 +91 7893845696</p>
-<p>📍 Moula Ali</p>
-<p>⏰ 7 AM – 9:30 PM</p>
-
-<a href="https://wa.me/7893845696" class="btn btn-success w-100 mt-3">
-WhatsApp Now
-</a>
-
 </div>
 
 </div>
 
+</div>
 </div>
 
 </div>
@@ -579,5 +451,6 @@ window.open(
 
 </body>
 </html>
+
 
 
