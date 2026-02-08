@@ -2,17 +2,16 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>KS Digital Services | Trusted Online Service Center</title>
 
 <meta name="description"
-content="KS Digital Services Hyderabad provides Passport, PAN, Aadhar, Certificates, GST, Licenses, Ticket Booking and Online Applications.">
+content="KS Digital Services Hyderabad - Passport, PAN, Aadhar, GST, Certificates, Licenses, Booking & Online Services">
 
 <meta name="keywords"
-content="KS Digital Services, Passport Agent Hyderabad, PAN Card, Aadhar, GST, Certificates, Online Services">
+content="KS Digital Services, Passport, PAN, Aadhar, GST, Online Services Hyderabad">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -76,7 +75,7 @@ body{
 
 .services-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
     gap:20px;
 }
 
@@ -84,12 +83,11 @@ body{
     background:white;
     border:1px solid #e5e7eb;
     border-radius:14px;
-    padding:24px 15px 22px;
+    padding:24px 15px;
     min-height:220px;
     text-align:center;
     cursor:pointer;
     transition:.25s;
-    position:relative;
 }
 
 .service-card:hover{
@@ -104,19 +102,14 @@ body{
     height:150px;
     object-fit:contain;
     margin-bottom:12px;
-    transition:transform .3s ease;
+    transition:.3s;
 }
 
 .service-card:hover img{
-    transform:scale(1.12);
+    transform:scale(1.1);
 }
 
-.service-card h6{
-    font-weight:600;
-    margin-bottom:4px;
-}
-
-/* ================= TAGS ================= */
+/* TAGS */
 
 .service-tags{
     margin-top:6px;
@@ -144,30 +137,11 @@ body{
     border-radius:10px;
 }
 
-/* ================= POPULAR GLOW ================= */
+/* HIGHLIGHT POPULAR */
 
 .popular-card{
     border:2px solid #fb923c;
-    box-shadow:0 0 12px rgba(251,146,60,.25);
-}
-
-.popular-card:hover{
-    box-shadow:0 0 20px rgba(251,146,60,.4);
-}
-
-/* ================= RECOMMENDED RIBBON ================= */
-
-.recommended{
-    position:absolute;
-    top:10px;
-    right:-30px;
-    background:#2563eb;
-    color:white;
-    font-size:.65rem;
-    font-weight:700;
-    padding:4px 35px;
-    transform:rotate(45deg);
-    box-shadow:0 2px 6px rgba(0,0,0,.2);
+    box-shadow:0 0 14px rgba(251,146,60,.3);
 }
 
 /* ================= REVIEWS ================= */
@@ -240,20 +214,13 @@ footer{
     height:120px;
 }
 
-.recommended{
-    right:-25px;
-    font-size:.6rem;
-}
-
 }
 
 </style>
-
 </head>
 
 
 <body>
-
 
 <!-- NAV -->
 
@@ -303,7 +270,6 @@ WhatsApp Now
 <!-- SERVICES -->
 
 <section class="section" id="services">
-
 <div class="container">
 
 <div class="section-title text-center mb-4">
@@ -311,108 +277,256 @@ WhatsApp Now
 </div>
 
 
-<div class="category">
+<!-- GOVT -->
 
+<div class="category">
 <h4>Government Documents</h4>
 
 <div class="services-grid">
 
-
-<!-- Passport -->
 <div class="service-card popular-card" onclick="wa('Passport')">
-
-<div class="recommended">RECOMMENDED</div>
-
-<img src="./passport.png" loading="lazy">
-
-<h6>Passport</h6>
-
+<img src="./passport.png"><h6>Passport</h6>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
 </div>
-
 </div>
 
-
-<!-- PAN -->
 <div class="service-card popular-card" onclick="wa('PAN Card')">
-
-<div class="recommended">RECOMMENDED</div>
-
-<img src="./pan.png" loading="lazy">
-
-<h6>PAN Card</h6>
-
+<img src="./pan.png"><h6>PAN Card</h6>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
 </div>
-
 </div>
 
-
-<!-- Aadhar -->
 <div class="service-card popular-card" onclick="wa('Aadhar Update')">
-
-<div class="recommended">RECOMMENDED</div>
-
-<img src="./aadhar.png" loading="lazy">
-
-<h6>Aadhar Update</h6>
-
+<img src="./aadhar.png"><h6>Aadhar Update</h6>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
 </div>
-
 </div>
 
-
-<!-- Voter -->
 <div class="service-card" onclick="wa('Voter ID')">
-
-<img src="./voter.png" loading="lazy">
-
-<h6>Voter ID</h6>
-
-<div class="service-tags">
-<span class="sameday-badge">SAME DAY</span>
+<img src="./voter.png"><h6>Voter ID</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
-</div>
-
-
-<!-- Birth -->
 <div class="service-card" onclick="wa('Birth Certificate')">
-
-<img src="./birth.png" loading="lazy">
-
-<h6>Birth Certificate</h6>
-
-<div class="service-tags">
-<span class="sameday-badge">SAME DAY</span>
+<img src="./birth.png"><h6>Birth Certificate</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
-</div>
-
-
-<!-- Marriage -->
 <div class="service-card" onclick="wa('Marriage Certificate')">
-
-<img src="./marriage.png" loading="lazy">
-
-<h6>Marriage Certificate</h6>
-
-<div class="service-tags">
-<span class="sameday-badge">SAME DAY</span>
-</div>
-
+<img src="./marriage.png"><h6>Marriage Certificate</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 </div>
 </div>
 
+
+<!-- BUSINESS -->
+
+<div class="category">
+<h4>Business & Licenses</h4>
+
+<div class="services-grid">
+
+<div class="service-card" onclick="wa('GST Registration')">
+<img src="./gst.png"><h6>GST Registration</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('UDYAM MSME')">
+<img src="./msme.png"><h6>UDYAM / MSME</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('Trade License')">
+<img src="./trade.png"><h6>Trade License</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('Food License')">
+<img src="./food.png"><h6>Food License</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('Labour License')">
+<img src="./labour.png"><h6>Labour License</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+</div>
+</div>
+
+
+<!-- TRAVEL -->
+
+<div class="category">
+<h4>Travel & Bookings</h4>
+
+<div class="services-grid">
+
+<div class="service-card" onclick="wa('Bus Tickets')">
+<img src="./bus.png"><h6>Bus Tickets</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('Train Tickets')">
+<img src="./train.png"><h6>Train Tickets</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('TTD Booking')">
+<img src="./temple.png"><h6>TTD Booking</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+</div>
+</div>
+
+
+<!-- EXAMS -->
+
+<div class="category">
+<h4>Exam & Education</h4>
+
+<div class="services-grid">
+
+<div class="service-card" onclick="wa('TET NET')">
+<img src="./exam.png"><h6>TET / NET</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('EAMCET Polycet')">
+<img src="./exam.png"><h6>EAMCET / Polycet</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('ECET ICET')">
+<img src="./exam.png"><h6>ECET / ICET</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('Scholarship')">
+<img src="./scholar.png"><h6>Scholarship</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+</div>
+</div>
+
+
+<!-- UTILITY -->
+
+<div class="category">
+<h4>Utility Services</h4>
+
+<div class="services-grid">
+
+<div class="service-card" onclick="wa('Utility Services')">
+<img src="./utility.png"><h6>Utility Services</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+<div class="service-card" onclick="wa('Online Forms')">
+<img src="./online.png"><h6>Online Forms</h6>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="section bg-light" id="reviews">
+<div class="container">
+
+<div class="section-title text-center mb-4">
+<h2>Google Reviews</h2>
+</div>
+
+<div class="review-box">
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285"
+width="100%"
+height="350"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+</div>
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+<div class="container">
+
+<div class="section-title text-center mb-4">
+<h2>Our Office Gallery</h2>
+</div>
+
+<div class="gallery">
+<img src="./shop1.jpg">
+<img src="./shop2.jpg">
+<img src="./shop3.jpg">
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+<div class="container">
+
+<div class="section-title text-center mb-4">
+<h2>Contact</h2>
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+
+<div class="contact-box text-center">
+
+<p>📞 +91 7893845696</p>
+<p>📍 Moula Ali, Hyderabad</p>
+<p>⏰ 7 AM – 9:30 PM</p>
+
+<a href="https://wa.me/7893845696" class="btn btn-success w-100 mt-3">
+WhatsApp Now
+</a>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285"
+width="100%"
+height="280"
+style="border:0;"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
 </div>
 </section>
 
@@ -434,7 +548,6 @@ WhatsApp Now
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-
 function wa(service){
 
 let msg = `Hi, I need help with ${service}`;
@@ -443,14 +556,12 @@ window.open(
 `https://wa.me/7893845696?text=${encodeURIComponent(msg)}`,
 '_blank'
 );
-
 }
-
 </script>
-
 
 </body>
 </html>
+
 
 
 
