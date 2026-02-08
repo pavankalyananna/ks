@@ -19,7 +19,7 @@ content="KS Digital Services, Passport Agent Hyderabad, PAN Card, Aadhar, GST, C
 
 <style>
 
-/* BASE */
+/* ================= BASE ================= */
 
 body{
     font-family:system-ui,sans-serif;
@@ -27,7 +27,7 @@ body{
     color:#1f2933;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 .navbar{
     background:#fff;
@@ -39,7 +39,7 @@ body{
     color:#1d4ed8 !important;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     background:linear-gradient(135deg,#e0f2fe,#ffffff);
@@ -52,7 +52,7 @@ body{
     color:#1e40af;
 }
 
-/* SECTION */
+/* ================= SECTION ================= */
 
 .section{
     padding:70px 15px;
@@ -63,7 +63,7 @@ body{
     color:#1e40af;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
 .category{
     margin-bottom:50px;
@@ -89,40 +89,61 @@ body{
     text-align:center;
     cursor:pointer;
     transition:.25s;
+    position:relative;
 }
-
 
 .service-card:hover{
     box-shadow:0 6px 18px rgba(0,0,0,.1);
     transform:translateY(-4px);
 }
 
-/* BIGGER SERVICE ICONS */
+/* ICON */
 
 .service-card img{
     width:130px;
     height:150px;
     object-fit:contain;
     margin-bottom:14px;
+    transition:transform .3s ease;
 }
 
-/* Mobile adjustment */
-
-@media(max-width:576px){
-
-    .service-card img{
-        width:110px;
-        height:120px;
-    }
-
+.service-card:hover img{
+    transform:scale(1.12);
 }
-
 
 .service-card h6{
     font-weight:600;
 }
 
-/* REVIEWS */
+/* ================= BADGES ================= */
+
+.popular-badge{
+    position:absolute;
+    top:8px;
+    left:8px;
+    background:#f97316;
+    color:white;
+    font-size:.7rem;
+    font-weight:700;
+    padding:3px 8px;
+    border-radius:12px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+.sameday-badge{
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:#16a34a;
+    color:white;
+    font-size:.7rem;
+    font-weight:700;
+    padding:3px 8px;
+    border-radius:12px;
+    box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+/* ================= REVIEWS ================= */
 
 .review-box{
     background:white;
@@ -131,7 +152,7 @@ body{
     padding:25px;
 }
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 
 .gallery{
     display:grid;
@@ -147,7 +168,7 @@ body{
     border:1px solid #e5e7eb;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact-box{
     background:white;
@@ -156,7 +177,7 @@ body{
     padding:25px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#f1f5f9;
@@ -164,7 +185,7 @@ footer{
     text-align:center;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 
 .whatsapp{
     position:fixed;
@@ -181,9 +202,18 @@ footer{
     font-size:1.6rem;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
+@media(max-width:576px){
 
+.hero h1{font-size:2rem}
+
+.service-card img{
+    width:110px;
+    height:120px;
+}
+
+}
 
 </style>
 
@@ -255,28 +285,49 @@ WhatsApp Now
 
 <div class="services-grid">
 
+<!-- Passport -->
 <div class="service-card" onclick="wa('Passport')">
-<img src="./passport.png" loading="lazy"><h6>Passport</h6>
+<span class="popular-badge">POPULAR</span>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./passport.png" loading="lazy">
+<h6>Passport</h6>
 </div>
 
+<!-- PAN -->
 <div class="service-card" onclick="wa('PAN Card')">
-<img src="./pan.png" loading="lazy"><h6>PAN Card</h6>
+<span class="popular-badge">POPULAR</span>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./pan.png" loading="lazy">
+<h6>PAN Card</h6>
 </div>
 
+<!-- Aadhar -->
 <div class="service-card" onclick="wa('Aadhar Update')">
-<img src="./aadhar.png" loading="lazy"><h6>Aadhar Update</h6>
+<span class="popular-badge">POPULAR</span>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./aadhar.png" loading="lazy">
+<h6>Aadhar Update</h6>
 </div>
 
+<!-- Voter -->
 <div class="service-card" onclick="wa('Voter ID')">
-<img src="./voter.png" loading="lazy"><h6>Voter ID</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./voter.png" loading="lazy">
+<h6>Voter ID</h6>
 </div>
 
+<!-- Birth -->
 <div class="service-card" onclick="wa('Birth Certificate')">
-<img src="./birth.png" loading="lazy"><h6>Birth Certificate</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./birth.png" loading="lazy">
+<h6>Birth Certificate</h6>
 </div>
 
+<!-- Marriage -->
 <div class="service-card" onclick="wa('Marriage Certificate')">
-<img src="./marriage.png" loading="lazy"><h6>Marriage Certificate</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./marriage.png" loading="lazy">
+<h6>Marriage Certificate</h6>
 </div>
 
 </div>
@@ -290,23 +341,33 @@ WhatsApp Now
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('GST Registration')">
-<img src="./gst.png" loading="lazy"><h6>GST Registration</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./gst.png" loading="lazy">
+<h6>GST Registration</h6>
 </div>
 
 <div class="service-card" onclick="wa('UDYAM MSME')">
-<img src="./msme.png" loading="lazy"><h6>UDYAM / MSME</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./msme.png" loading="lazy">
+<h6>UDYAM / MSME</h6>
 </div>
 
 <div class="service-card" onclick="wa('Trade License')">
-<img src="./trade.png" loading="lazy"><h6>Trade License</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./trade.png" loading="lazy">
+<h6>Trade License</h6>
 </div>
 
 <div class="service-card" onclick="wa('Food License')">
-<img src="./food.png" loading="lazy"><h6>Food License</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./food.png" loading="lazy">
+<h6>Food License</h6>
 </div>
 
 <div class="service-card" onclick="wa('Labour License')">
-<img src="./labour.png" loading="lazy"><h6>Labour License</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./labour.png" loading="lazy">
+<h6>Labour License</h6>
 </div>
 
 </div>
@@ -320,15 +381,21 @@ WhatsApp Now
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Bus Tickets')">
-<img src="./bus.png" loading="lazy"><h6>Bus Tickets</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./bus.png" loading="lazy">
+<h6>Bus Tickets</h6>
 </div>
 
 <div class="service-card" onclick="wa('Train Tickets')">
-<img src="./train.png" loading="lazy"><h6>Train Tickets</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./train.png" loading="lazy">
+<h6>Train Tickets</h6>
 </div>
 
 <div class="service-card" onclick="wa('TTD Booking')">
-<img src="./temple.png" loading="lazy"><h6>TTD Booking</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./temple.png" loading="lazy">
+<h6>TTD Booking</h6>
 </div>
 
 </div>
@@ -342,19 +409,27 @@ WhatsApp Now
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('TET NET')">
-<img src="./exam.png" loading="lazy"><h6>TET / NET</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./exam.png" loading="lazy">
+<h6>TET / NET</h6>
 </div>
 
 <div class="service-card" onclick="wa('EAMCET Polycet')">
-<img src="./exam.png" loading="lazy"><h6>EAMCET / Polycet</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./exam.png" loading="lazy">
+<h6>EAMCET / Polycet</h6>
 </div>
 
 <div class="service-card" onclick="wa('ECET ICET')">
-<img src="./exam.png" loading="lazy"><h6>ECET / ICET</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./exam.png" loading="lazy">
+<h6>ECET / ICET</h6>
 </div>
 
 <div class="service-card" onclick="wa('Scholarship')">
-<img src="./scholar.png" loading="lazy"><h6>Scholarship</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./scholar.png" loading="lazy">
+<h6>Scholarship</h6>
 </div>
 
 </div>
@@ -368,11 +443,15 @@ WhatsApp Now
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Utility Services')">
-<img src="./utility.png" loading="lazy"><h6>Utility Services</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./utility.png" loading="lazy">
+<h6>Utility Services</h6>
 </div>
 
 <div class="service-card" onclick="wa('Online Forms')">
-<img src="./online.png" loading="lazy"><h6>Online Forms</h6>
+<span class="sameday-badge">SAME DAY</span>
+<img src="./online.png" loading="lazy">
+<h6>Online Forms</h6>
 </div>
 
 </div>
@@ -437,7 +516,7 @@ loading="lazy">
 <div class="container">
 
 <div class="section-title text-center mb-4">
-<h2>Contact </h2>
+<h2>Contact</h2>
 </div>
 
 <div class="row g-4">
@@ -458,9 +537,6 @@ WhatsApp Now
 
 </div>
 
-
-
-
 </div>
 
 </div>
@@ -470,9 +546,7 @@ WhatsApp Now
 <!-- FOOTER -->
 
 <footer>
-
 <p>© 2025 KS Digital Services</p>
-
 </footer>
 
 
@@ -503,4 +577,5 @@ window.open(
 
 </body>
 </html>
+
 
