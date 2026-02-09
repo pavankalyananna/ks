@@ -233,16 +233,17 @@ height:120px;
 
 <div class="service-tabs">
 
-<button class="tab-btn active" onclick="showTab('govt')">Govt Docs</button>
-<button class="tab-btn" onclick="showTab('business')">Licenses</button>
-<button class="tab-btn" onclick="showTab('ticket')">Ticket Booking</button>
-<button class="tab-btn" onclick="showTab('exam')">Exam & Edu</button>
-<button class="tab-btn" onclick="showTab('utility')">Utility</button>
+<button class="tab-btn active" onclick="showTab('govt',this)">Govt Docs</button>
+<button class="tab-btn" onclick="showTab('business',this)">Licenses</button>
+<button class="tab-btn" onclick="showTab('ticket',this)">Ticket Booking</button>
+<button class="tab-btn" onclick="showTab('exam',this)">Exam & Edu</button>
+<button class="tab-btn" onclick="showTab('utility',this)">Utility</button>
+<button class="tab-btn" onclick="showTab('contactTab',this)">Contact</button>
 
 </div>
 
 
-<!-- SERVICES -->
+<!-- CONTENT -->
 
 <section class="section">
 <div class="container">
@@ -345,7 +346,7 @@ height:120px;
 
 <div class="category" id="ticket">
 
-<h4>Ticket Bookings</h4>
+<h4>Ticket Booking</h4>
 
 <div class="services-grid">
 
@@ -430,18 +431,14 @@ height:120px;
 </div>
 </div>
 
-</div>
-</section>
 
+<!-- CONTACT TAB -->
 
-<!-- REVIEWS -->
+<div class="category" id="contactTab">
 
-<section class="section bg-light">
-<div class="container">
+<h4 class="text-center mb-4">Contact & Reviews</h4>
 
-<h4 class="text-center mb-4">Google Reviews</h4>
-
-<div class="box">
+<div class="box mb-4">
 
 <iframe
 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin"
@@ -454,37 +451,16 @@ referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 
 </div>
-</div>
-</section>
 
 
-<!-- GALLERY -->
+<h5 class="text-center mb-3">Gallery</h5>
 
-<section class="section">
-<div class="container">
-
-<h4 class="text-center mb-4">Gallery</h4>
-
-<div class="gallery">
+<div class="gallery mb-4">
 <img src="./shop1.png">
 <img src="./shop2.png">
 <img src="./shop3.png">
 </div>
 
-</div>
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section">
-<div class="container">
-
-<h4 class="text-center mb-4">Contact</h4>
-
-<div class="row g-4">
-
-<div class="col-md-6">
 
 <div class="box text-center">
 
@@ -500,21 +476,7 @@ WhatsApp Now
 
 </div>
 
-<div class="col-md-6">
 
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin"
-width="100%"
-height="260"
-style="border:0;"
-allowfullscreen=""
-loading="lazy"
-referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-</div>
-
-</div>
 </div>
 </section>
 
@@ -535,6 +497,8 @@ referrerpolicy="no-referrer-when-downgrade">
 
 <script>
 
+/* WHATSAPP */
+
 function wa(service){
 
 let msg = `Hi, I need help with ${service}`;
@@ -549,7 +513,7 @@ window.open(
 
 /* TAB FILTER */
 
-function showTab(tab){
+function showTab(tab,btn){
 
 document.querySelectorAll('.category').forEach(c=>{
 c.classList.remove('active');
@@ -561,7 +525,7 @@ document.querySelectorAll('.tab-btn').forEach(b=>{
 b.classList.remove('active');
 });
 
-event.target.classList.add('active');
+btn.classList.add('active');
 
 window.scrollTo({top:0,behavior:'smooth'});
 
@@ -571,9 +535,3 @@ window.scrollTo({top:0,behavior:'smooth'});
 
 </body>
 </html>
-
-
-
-
-
-
