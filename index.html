@@ -122,7 +122,7 @@ gap:22px;
 background:white;
 border:1px solid #e5e7eb;
 border-radius:14px;
-padding:20px 12px;
+padding:22px 14px;
 text-align:center;
 cursor:pointer;
 transition:.25s;
@@ -133,12 +133,16 @@ box-shadow:0 6px 18px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
+/* ICON DEFAULT (TABLET) */
+
 .service-card img{
-width:160px;
-height:170px;
+width:180px;
+height:190px;
 object-fit:contain;
 margin-bottom:10px;
 }
+
+/* BUTTON */
 
 .service-btn{
 margin-top:6px;
@@ -149,6 +153,60 @@ border-radius:20px;
 background:#2563eb;
 color:white;
 font-weight:600;
+}
+
+/* DESKTOP - BIGGER IMAGES */
+
+@media(min-width:992px){
+
+.service-card{
+padding:26px 18px;
+}
+
+.service-card img{
+width:220px;
+height:230px;
+}
+
+.services-grid{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+}
+
+/* MOBILE - COMPACT CARDS */
+
+@media(max-width:576px){
+
+.section{
+padding:25px 10px;
+}
+
+.services-grid{
+gap:14px;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+}
+
+.service-card{
+padding:12px 8px;
+border-radius:10px;
+}
+
+.service-card img{
+width:130px;
+height:140px;
+margin-bottom:6px;
+}
+
+.service-card h6{
+font-size:.85rem;
+}
+
+.service-btn{
+font-size:.75rem;
+padding:4px 10px;
+}
+
 }
 
 /* FOOTER */
@@ -165,6 +223,8 @@ color:#93c5fd;
 text-decoration:none;
 font-weight:600;
 }
+
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -218,7 +278,7 @@ font-size:1.6rem;
 
 <div class="tab-content active" id="citizen">
 
-<div class="sub-tabs" id="citizenTabs">
+<div class="sub-tabs">
 
 <button class="sub-btn active" data-sub="govt">Govt ID</button>
 <button class="sub-btn" data-sub="cert">Certificates</button>
@@ -286,7 +346,7 @@ font-size:1.6rem;
 
 <div class="tab-content" id="other">
 
-<div class="sub-tabs" id="otherTabs">
+<div class="sub-tabs">
 
 <button class="sub-btn active" data-sub="ticket">Ticket</button>
 <button class="sub-btn" data-sub="exam">CET</button>
@@ -401,7 +461,7 @@ b.onclick=()=>showMain(i);
 });
 
 
-/* SUB TABS */
+/* SUB TABS (WITH SWIPE) */
 
 function setupSub(tabBox){
 
@@ -451,7 +511,7 @@ if(diff<0 && index>0) show(index-1);
 
 }
 
-/* INIT SUB TABS */
+/* INIT */
 
 setupSub(document.getElementById('citizen'));
 setupSub(document.getElementById('other'));
@@ -460,3 +520,4 @@ setupSub(document.getElementById('other'));
 
 </body>
 </html>
+
