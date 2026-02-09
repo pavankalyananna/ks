@@ -27,11 +27,14 @@ margin:0;
 .navbar{
 background:#fff;
 border-bottom:1px solid #e5e7eb;
+justify-content:center;
 }
 
 .navbar-brand{
-font-weight:800;
+font-weight:900;
 color:#1d4ed8 !important;
+margin:auto;
+font-size:1.4rem;
 }
 
 /* TABS */
@@ -94,8 +97,8 @@ margin-bottom:20px;
 
 .services-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:22px;
 }
 
 /* CARD */
@@ -104,22 +107,22 @@ gap:20px;
 background:white;
 border:1px solid #e5e7eb;
 border-radius:14px;
-padding:18px 12px;
+padding:20px 12px;
 text-align:center;
 cursor:pointer;
 transition:.25s;
 }
 
 .service-card:hover{
-box-shadow:0 8px 20px rgba(0,0,0,.12);
+box-shadow:0 8px 22px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
-/* ICON */
+/* ICON - BIGGER */
 
 .service-card img{
-width:120px;
-height:130px;
+width:150px;
+height:160px;
 object-fit:contain;
 margin-bottom:8px;
 transition:.3s;
@@ -214,6 +217,17 @@ justify-content:center;
 font-size:1.6rem;
 }
 
+/* MOBILE */
+
+@media(max-width:576px){
+
+.service-card img{
+width:130px;
+height:140px;
+}
+
+}
+
 </style>
 </head>
 
@@ -223,8 +237,8 @@ font-size:1.6rem;
 <!-- NAV -->
 
 <nav class="navbar fixed-top">
-<div class="container">
-<a class="navbar-brand" href="#">KS DIGITAL</a>
+<div class="container justify-content-center">
+<a class="navbar-brand" href="#">KS DIGITAL SERVICES</a>
 </div>
 </nav>
 
@@ -235,6 +249,7 @@ font-size:1.6rem;
 <div class="service-tabs" id="tabs">
 
 <button class="tab-btn active" data-tab="govt">Govt Docs</button>
+<button class="tab-btn" data-tab="cert">Certificates</button>
 <button class="tab-btn" data-tab="business">Licenses</button>
 <button class="tab-btn" data-tab="ticket">Ticket Booking</button>
 <button class="tab-btn" data-tab="exam">Exam & Edu</button>
@@ -243,8 +258,7 @@ font-size:1.6rem;
 
 </div>
 </div>
-<br>
-  <br>
+
 
 <!-- CONTENT -->
 
@@ -287,22 +301,40 @@ font-size:1.6rem;
 </div>
 </div>
 
+<div class="service-card" onclick="wa('Voter ID')">
+<img src="./voter.png">
+<h6>Voter ID</h6>
+<div class="service-tags">
+<span class="sameday-badge">SAME DAY</span>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- CERTIFICATES -->
+
+<div class="category" id="cert">
+
+<h4>Certificates</h4>
+
+<div class="services-grid">
+
 <div class="service-card" onclick="wa('Birth Certificate')">
 <img src="./birth.png">
 <h6>Birth Certificate</h6>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<div class="service-tags">
+<span class="sameday-badge">SAME DAY</span>
+</div>
 </div>
 
 <div class="service-card" onclick="wa('Marriage Certificate')">
 <img src="./marriage.png">
 <h6>Marriage Certificate</h6>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<div class="service-tags">
+<span class="sameday-badge">SAME DAY</span>
 </div>
-
-<div class="service-card" onclick="wa('Voter ID')">
-<img src="./voter.png">
-<h6>Voter ID</h6>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 </div>
@@ -318,32 +350,27 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('GST Registration')">
-<img src="./gst.png">
-<h6>GST Registration</h6>
+<img src="./gst.png"><h6>GST Registration</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('UDYAM MSME')">
-<img src="./msme.png">
-<h6>UDYAM / MSME</h6>
+<img src="./msme.png"><h6>UDYAM / MSME</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Trade License')">
-<img src="./trade.png">
-<h6>Trade License</h6>
+<img src="./trade.png"><h6>Trade License</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Food License')">
-<img src="./food.png">
-<h6>Food License</h6>
+<img src="./food.png"><h6>Food License</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Labour License')">
-<img src="./labour.png">
-<h6>Labour License</h6>
+<img src="./labour.png"><h6>Labour License</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
@@ -360,20 +387,17 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Bus Tickets')">
-<img src="./bus.png">
-<h6>Bus Tickets</h6>
+<img src="./bus.png"><h6>Bus Tickets</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Train Tickets')">
-<img src="./train.png">
-<h6>Train Tickets</h6>
+<img src="./train.png"><h6>Train Tickets</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('TTD Booking')">
-<img src="./ttd.png">
-<h6>TTD Booking</h6>
+<img src="./ttd.png"><h6>TTD Booking</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
@@ -390,26 +414,22 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('TET NET')">
-<img src="./tet.png">
-<h6>TET / NET</h6>
+<img src="./tet.png"><h6>TET / NET</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('EAMCET')">
-<img src="./eamcet.png">
-<h6>EAMCET / Polycet</h6>
+<img src="./eamcet.png"><h6>EAMCET / Polycet</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('ECET')">
-<img src="./ecet.png">
-<h6>ECET / ICET</h6>
+<img src="./ecet.png"><h6>ECET / ICET</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Scholarship')">
-<img src="./scholarship.png">
-<h6>Scholarship</h6>
+<img src="./scholarship.png"><h6>Scholarship</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
@@ -426,14 +446,12 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Utility Services')">
-<img src="./utility.png">
-<h6>Utility Services</h6>
+<img src="./utility.png"><h6>Utility Services</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Job Applications')">
-<img src="./job.png">
-<h6>Job Applications</h6>
+<img src="./job.png"><h6>Job Applications</h6>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
@@ -457,14 +475,6 @@ style="border:0;"
 loading="lazy">
 </iframe>
 
-</div>
-
-<h5 class="text-center mb-3">Gallery</h5>
-
-<div class="gallery mb-4">
-<img src="./shop1.png">
-<img src="./shop2.png">
-<img src="./shop3.png">
 </div>
 
 <div class="box text-center">
@@ -514,7 +524,7 @@ window.open(
 }
 
 
-/* TAB SYSTEM */
+/* TABS */
 
 const tabs = document.querySelectorAll('.tab-btn');
 const categories = document.querySelectorAll('.category');
@@ -540,4 +550,3 @@ window.scrollTo({top:0,behavior:'smooth'});
 
 </body>
 </html>
-
