@@ -11,18 +11,22 @@
 
 <style>
 
-/* BASE */
+/* ================= BASE ================= */
 
-html{scroll-behavior:smooth}
+html,body{
+height:100%;
+}
 
 body{
 font-family:system-ui,sans-serif;
 background:linear-gradient(#eef6ff,#ffffff);
 color:#1f2933;
 margin:0;
+display:flex;
+flex-direction:column;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 .navbar{
 background:#fff;
@@ -35,6 +39,7 @@ font-weight:900;
 color:#1d4ed8 !important;
 font-size:1.4rem;
 }
+
 
 /* ================= MAIN TABS ================= */
 
@@ -63,6 +68,7 @@ padding:10px 18px;
 font-weight:600;
 border-radius:10px;
 color:#1e40af;
+transition:.2s;
 }
 
 .tabs button.active{
@@ -78,13 +84,12 @@ display:flex;
 gap:10px;
 overflow-x:auto;
 padding:10px;
-margin-bottom:25px;
 justify-content:center;
 
-/* Different color bar */
 background:linear-gradient(135deg,#dcfce7,#ecfdf5);
 border:1px solid #86efac;
 border-radius:14px;
+margin-bottom:25px;
 }
 
 .sub-tabs::-webkit-scrollbar{display:none}
@@ -99,10 +104,6 @@ color:#065f46;
 transition:.2s;
 }
 
-.sub-tabs button:hover{
-background:#86efac;
-}
-
 .sub-tabs button.active{
 background:#16a34a;
 color:white;
@@ -110,9 +111,15 @@ box-shadow:0 0 8px rgba(22,163,74,.5);
 }
 
 
-/* ================= SECTION ================= */
+/* ================= LAYOUT ================= */
 
-.section{padding:40px 15px}
+main{
+flex:1;
+}
+
+.section{
+padding:40px 15px;
+}
 
 
 /* ================= VISIBILITY ================= */
@@ -128,7 +135,7 @@ box-shadow:0 0 8px rgba(22,163,74,.5);
 
 .services-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:22px;
 }
 
@@ -150,18 +157,12 @@ box-shadow:0 6px 18px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
-
-/* ICON (TABLET DEFAULT) */
-
 .service-card img{
-width:180px;
-height:190px;
+width:220px;
+height:230px;
 object-fit:contain;
 margin-bottom:8px;
 }
-
-
-/* BUTTON */
 
 .service-btn{
 margin-top:4px;
@@ -175,56 +176,23 @@ font-weight:600;
 }
 
 
-/* ================= DESKTOP ================= */
-
-@media(min-width:992px){
-
-.service-card{
-padding:26px 18px;
-}
-
-.service-card img{
-width:220px;
-height:230px;
-}
-
-.services-grid{
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-}
-
-}
-
-
 /* ================= MOBILE ================= */
 
 @media(max-width:576px){
 
-.section{
-padding:20px 8px;
-}
-
-/* Force 2 columns */
 .services-grid{
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
-/* Compact cards */
 .service-card{
 padding:10px 6px;
 border-radius:10px;
 }
 
-/* Smaller images */
 .service-card img{
 width:110px;
 height:115px;
-margin-bottom:4px;
-}
-
-.service-card h6{
-font-size:.8rem;
-margin-bottom:4px;
 }
 
 .service-btn{
@@ -240,14 +208,15 @@ padding:3px 8px;
 footer{
 background:#1e293b;
 color:white;
-padding:30px 15px;
+padding:25px 15px;
 text-align:center;
+margin-top:auto;
 }
 
 footer a{
 color:#93c5fd;
-text-decoration:none;
 font-weight:600;
+text-decoration:none;
 }
 
 
@@ -273,6 +242,7 @@ font-size:1.6rem;
 
 <body>
 
+
 <!-- NAV -->
 
 <nav class="navbar fixed-top">
@@ -285,11 +255,11 @@ font-size:1.6rem;
 <!-- MAIN TABS -->
 
 <div class="tabs-wrapper">
-<div class="tabs">
+<div class="tabs" id="mainTabs">
 
-<button class="tab-btn active" data-tab="citizen">Citizen</button>
-<button class="tab-btn" data-tab="license">Licenses</button>
-<button class="tab-btn" data-tab="other">Other</button>
+<button class="tab-btn active">Citizen</button>
+<button class="tab-btn">Licenses</button>
+<button class="tab-btn">Other</button>
 
 </div>
 </div>
@@ -297,35 +267,34 @@ font-size:1.6rem;
 <br><br>
 
 
+<main>
+
 <section class="section">
 <div class="container">
 
 
 <!-- ================= CITIZEN ================= -->
 
-<div class="tab-content active" id="citizen">
+<div class="tab-content active">
 
 <div class="sub-tabs">
 
-<button class="sub-btn active" data-sub="govt">Govt ID</button>
-<button class="sub-btn" data-sub="cert">Certificates</button>
+<button class="sub-btn active">Govt ID</button>
+<button class="sub-btn">Certificates</button>
 
 </div>
 
 
 <!-- GOVT -->
 
-<div class="sub-content active" id="govt">
+<div class="sub-content active">
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Passport')"><img src="./passport.png"><h6>Passport</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('PAN Card')"><img src="./pan.png"><h6>PAN Card</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('Aadhar Update')"><img src="./aadhar.png"><h6>Aadhar</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('Voter ID')"><img src="./voter.png"><h6>Voter ID</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('PAN Card')"><img src="./pan.png"><h6>PAN</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('Aadhar')"><img src="./aadhar.png"><h6>Aadhar</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('Voter ID')"><img src="./voter.png"><h6>Voter</h6><button class="service-btn">Click</button></div>
 
 </div>
 </div>
@@ -333,14 +302,12 @@ font-size:1.6rem;
 
 <!-- CERT -->
 
-<div class="sub-content" id="cert">
+<div class="sub-content">
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Birth Certificate')"><img src="./birth.png"><h6>Birth</h6><button class="service-btn">Click</button></div>
-
 <div class="service-card" onclick="wa('Marriage Certificate')"><img src="./marriage.png"><h6>Marriage</h6><button class="service-btn">Click</button></div>
-
 <div class="service-card" onclick="wa('Life Certificate')"><img src="./life.png"><h6>Life</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -351,80 +318,71 @@ font-size:1.6rem;
 
 <!-- ================= LICENSE ================= -->
 
-<div class="tab-content" id="license">
+<div class="tab-content">
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Food License')"><img src="./food.png"><h6>Food</h6><button class="service-btn">Click</button></div>
-
 <div class="service-card" onclick="wa('Trade License')"><img src="./trade.png"><h6>Trade</h6><button class="service-btn">Click</button></div>
-
 <div class="service-card" onclick="wa('Labour License')"><img src="./labour.png"><h6>Labour</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('GST Registration')"><img src="./gst.png"><h6>GST</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('UDYAM MSME')"><img src="./msme.png"><h6>MSME</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('GST')"><img src="./gst.png"><h6>GST</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('MSME')"><img src="./msme.png"><h6>MSME</h6><button class="service-btn">Click</button></div>
 
 </div>
+
 </div>
 
 
 <!-- ================= OTHER ================= -->
 
-<div class="tab-content" id="other">
+<div class="tab-content">
 
 <div class="sub-tabs">
 
-<button class="sub-btn active" data-sub="ticket">Ticket</button>
-<button class="sub-btn" data-sub="exam">CET</button>
-<button class="sub-btn" data-sub="util">Utility</button>
+<button class="sub-btn active">Ticket</button>
+<button class="sub-btn">CET</button>
+<button class="sub-btn">Utility</button>
 
 </div>
 
 
 <!-- TICKET -->
 
-<div class="sub-content active" id="ticket">
+<div class="sub-content active">
 
 <div class="services-grid">
 
-<div class="service-card" onclick="wa('TTD Booking')"><img src="./ttd.png"><h6>TTD</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('Bus Tickets')"><img src="./bus.png"><h6>Bus</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('Train Tickets')"><img src="./train.png"><h6>Train</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('TTD')"><img src="./ttd.png"><h6>TTD</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('Bus')"><img src="./bus.png"><h6>Bus</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('Train')"><img src="./train.png"><h6>Train</h6><button class="service-btn">Click</button></div>
 
 </div>
 </div>
 
 
-<!-- EXAM -->
+<!-- CET -->
 
-<div class="sub-content" id="exam">
+<div class="sub-content">
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Scholarship')"><img src="./scholarship.png"><h6>Scholarship</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('TET NET')"><img src="./tet.png"><h6>TET/NET</h6><button class="service-btn">Click</button></div>
-
+<div class="service-card" onclick="wa('TET')"><img src="./tet.png"><h6>TET</h6><button class="service-btn">Click</button></div>
 <div class="service-card" onclick="wa('EAMCET')"><img src="./eamcet.png"><h6>EAMCET</h6><button class="service-btn">Click</button></div>
-
 <div class="service-card" onclick="wa('ECET')"><img src="./ecet.png"><h6>ECET</h6><button class="service-btn">Click</button></div>
 
 </div>
 </div>
 
 
-<!-- UTILITY -->
+<!-- UTIL -->
 
-<div class="sub-content" id="util">
+<div class="sub-content">
 
 <div class="services-grid">
 
-<div class="service-card" onclick="wa('Utility Services')"><img src="./utility.png"><h6>Utility</h6><button class="service-btn">Click</button></div>
-
-<div class="service-card" onclick="wa('Job Applications')"><img src="./job.png"><h6>Jobs</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('Utility')"><img src="./utility.png"><h6>Utility</h6><button class="service-btn">Click</button></div>
+<div class="service-card" onclick="wa('Jobs')"><img src="./job.png"><h6>Jobs</h6><button class="service-btn">Click</button></div>
 
 </div>
 </div>
@@ -434,6 +392,8 @@ font-size:1.6rem;
 
 </div>
 </section>
+
+</main>
 
 
 <!-- FOOTER -->
@@ -448,7 +408,7 @@ font-size:1.6rem;
 📍 Get Directions
 </a>
 
-<p class="mt-3">© 2025 KS Digital Services</p>
+<p class="mt-2">© 2025 KS Digital Services</p>
 
 </footer>
 
@@ -462,25 +422,28 @@ font-size:1.6rem;
 
 function wa(service){
 window.open(
-`https://wa.me/7893845696?text=${encodeURIComponent("Hi, I want "+service)}`,
+`https://wa.me/7893845696?text=${encodeURIComponent("Hi, I need "+service)}`,
 "_blank"
 );
 }
 
 
-/* MAIN TABS */
+/* MAIN TABS + SWIPE */
 
 const mainTabs=document.querySelectorAll('.tab-btn');
-const mainContent=document.querySelectorAll('.tab-content');
+const mainPages=document.querySelectorAll('.tab-content');
+
+let mainIndex=0;
 
 function showMain(i){
 
 mainTabs.forEach(b=>b.classList.remove('active'));
-mainContent.forEach(c=>c.classList.remove('active'));
+mainPages.forEach(p=>p.classList.remove('active'));
 
 mainTabs[i].classList.add('active');
-mainContent[i].classList.add('active');
+mainPages[i].classList.add('active');
 
+mainIndex=i;
 }
 
 mainTabs.forEach((b,i)=>{
@@ -488,22 +451,22 @@ b.onclick=()=>showMain(i);
 });
 
 
-/* SUB TABS + SWIPE */
+/* SUB TABS */
 
-function setupSub(tabBox){
+function setupSub(container){
 
-const btns=tabBox.querySelectorAll('.sub-btn');
-const subs=tabBox.querySelectorAll('.sub-content');
+const btns=container.querySelectorAll('.sub-btn');
+const pages=container.querySelectorAll('.sub-content');
 
 let index=0;
 
 function show(i){
 
 btns.forEach(b=>b.classList.remove('active'));
-subs.forEach(s=>s.classList.remove('active'));
+pages.forEach(p=>p.classList.remove('active'));
 
 btns[i].classList.add('active');
-subs[i].classList.add('active');
+pages[i].classList.add('active');
 
 index=i;
 }
@@ -515,19 +478,32 @@ b.onclick=()=>show(i);
 
 let startX=0;
 
-tabBox.addEventListener('touchstart',e=>{
+container.addEventListener('touchstart',e=>{
 startX=e.touches[0].clientX;
 });
 
-tabBox.addEventListener('touchend',e=>{
+container.addEventListener('touchend',e=>{
 
 let endX=e.changedTouches[0].clientX;
 let diff=startX-endX;
 
-if(Math.abs(diff)>50){
+/* SUB → MAIN TRANSITION */
 
-if(diff>0 && index<subs.length-1) show(index+1);
-if(diff<0 && index>0) show(index-1);
+if(Math.abs(diff)>60){
+
+if(diff>0){
+
+if(index<pages.length-1) show(index+1);
+else if(mainIndex<mainPages.length-1) showMain(mainIndex+1);
+
+}
+
+if(diff<0){
+
+if(index>0) show(index-1);
+else if(mainIndex>0) showMain(mainIndex-1);
+
+}
 
 }
 
@@ -538,8 +514,31 @@ if(diff<0 && index>0) show(index-1);
 
 /* INIT */
 
-setupSub(document.getElementById('citizen'));
-setupSub(document.getElementById('other'));
+setupSub(mainPages[0]); // citizen
+setupSub(mainPages[2]); // other
+
+
+/* MAIN SWIPE */
+
+let startX=0;
+
+document.addEventListener('touchstart',e=>{
+startX=e.touches[0].clientX;
+});
+
+document.addEventListener('touchend',e=>{
+
+let endX=e.changedTouches[0].clientX;
+let diff=startX-endX;
+
+if(Math.abs(diff)>80){
+
+if(diff>0 && mainIndex<mainPages.length-1) showMain(mainIndex+1);
+if(diff<0 && mainIndex>0) showMain(mainIndex-1);
+
+}
+
+});
 
 </script>
 
