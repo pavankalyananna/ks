@@ -118,7 +118,7 @@ box-shadow:0 8px 22px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
-/* ICON - BIGGER */
+/* ICON */
 
 .service-card img{
 width:180px;
@@ -130,6 +130,25 @@ transition:.3s;
 
 .service-card:hover img{
 transform:scale(1.1);
+}
+
+/* BUTTON */
+
+.service-btn{
+margin-top:6px;
+padding:6px 14px;
+font-size:.85rem;
+border:none;
+border-radius:20px;
+background:#2563eb;
+color:white;
+font-weight:600;
+transition:.2s;
+}
+
+.service-btn:hover{
+background:#1e40af;
+transform:scale(1.05);
 }
 
 /* TAGS */
@@ -176,22 +195,6 @@ border-radius:12px;
 padding:25px;
 }
 
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.gallery img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:12px;
-border:1px solid #e5e7eb;
-}
-
 /* FOOTER */
 
 footer{
@@ -218,6 +221,7 @@ font-size:1.6rem;
 }
 
 /* MOBILE */
+
 @media(max-width:576px){
 
 .service-card img{
@@ -226,7 +230,6 @@ height:180px;
 }
 
 }
-
 
 </style>
 </head>
@@ -259,10 +262,8 @@ height:180px;
 </div>
 </div>
 
-  <br>
-  <br>
+<br><br>
 
-<!-- CONTENT -->
 
 <section class="section">
 <div class="container">
@@ -279,6 +280,7 @@ height:180px;
 <div class="service-card popular-card" onclick="wa('Passport')">
 <img src="./passport.png">
 <h6>Passport</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
@@ -288,6 +290,7 @@ height:180px;
 <div class="service-card popular-card" onclick="wa('PAN Card')">
 <img src="./pan.png">
 <h6>PAN Card</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
@@ -297,6 +300,7 @@ height:180px;
 <div class="service-card popular-card" onclick="wa('Aadhar Update')">
 <img src="./aadhar.png">
 <h6>Aadhar Update</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
@@ -306,6 +310,7 @@ height:180px;
 <div class="service-card popular-card" onclick="wa('Voter ID')">
 <img src="./voter.png">
 <h6>Voter ID</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags">
 <span class="popular-badge">POPULAR</span>
 <span class="sameday-badge">SAME DAY</span>
@@ -327,25 +332,22 @@ height:180px;
 <div class="service-card" onclick="wa('Birth Certificate')">
 <img src="./birth.png">
 <h6>Birth Certificate</h6>
-<div class="service-tags">
-<span class="sameday-badge">SAME DAY</span>
-</div>
+<button class="service-btn">Click Here</button>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Marriage Certificate')">
 <img src="./marriage.png">
 <h6>Marriage Certificate</h6>
-<div class="service-tags">
-<span class="sameday-badge">SAME DAY</span>
-</div>
+<button class="service-btn">Click Here</button>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Life Certificate')">
 <img src="./life.png">
 <h6>Life Certificate</h6>
-<div class="service-tags">
-<span class="sameday-badge">SAME DAY</span>
-</div>
+<button class="service-btn">Click Here</button>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 </div>
@@ -362,30 +364,33 @@ height:180px;
 
 <div class="service-card" onclick="wa('Food License')">
 <img src="./food.png"><h6>Food License</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Trade License')">
 <img src="./trade.png"><h6>Trade License</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Labour License')">
 <img src="./labour.png"><h6>Labour License</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('GST Registration')">
 <img src="./gst.png"><h6>GST Return Filing</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('UDYAM MSME')">
 <img src="./msme.png"><h6>UDYAM / MSME</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
-
-
 
 </div>
 </div>
@@ -401,20 +406,21 @@ height:180px;
 
 <div class="service-card" onclick="wa('TTD Booking')">
 <img src="./ttd.png"><h6>TTD Booking</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Bus Tickets')">
 <img src="./bus.png"><h6>Bus Tickets</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Train Tickets')">
 <img src="./train.png"><h6>Train Tickets</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
-
-
 
 </div>
 </div>
@@ -430,24 +436,27 @@ height:180px;
 
 <div class="service-card" onclick="wa('Scholarship')">
 <img src="./scholarship.png"><h6>Scholarship</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('TET NET')">
 <img src="./tet.png"><h6>TET / NET</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('EAMCET')">
 <img src="./eamcet.png"><h6>EAMCET / Polycet</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('ECET')">
 <img src="./ecet.png"><h6>ECET / ICET</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
-
 
 </div>
 </div>
@@ -463,11 +472,13 @@ height:180px;
 
 <div class="service-card" onclick="wa('Utility Services')">
 <img src="./utility.png"><h6>Utility Services</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Job Applications')">
 <img src="./job.png"><h6>Job Applications</h6>
+<button class="service-btn">Click Here</button>
 <div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
@@ -512,14 +523,10 @@ WhatsApp Now
 </section>
 
 
-<!-- FOOTER -->
-
 <footer>
 <p>© 2025 KS Digital Services</p>
 </footer>
 
-
-<!-- WHATSAPP -->
 
 <a href="https://wa.me/7893845696" class="whatsapp">💬</a>
 
@@ -566,3 +573,4 @@ window.scrollTo({top:0,behavior:'smooth'});
 
 </body>
 </html>
+
