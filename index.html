@@ -26,6 +26,7 @@ display:flex;
 flex-direction:column;
 }
 
+
 /* ================= NAV ================= */
 
 .navbar{
@@ -150,6 +151,7 @@ padding:22px 14px;
 text-align:center;
 cursor:pointer;
 transition:.25s;
+overflow:hidden; /* safety */
 }
 
 .service-card:hover{
@@ -157,12 +159,18 @@ box-shadow:0 6px 18px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
+
+/* ================= ICON DEFAULT ================= */
+
 .service-card img{
-width:220px;
-height:230px;
+display:block;
+margin:auto;
 object-fit:contain;
 margin-bottom:8px;
 }
+
+
+/* ================= BUTTON ================= */
 
 .service-btn{
 margin-top:4px;
@@ -176,7 +184,30 @@ font-weight:600;
 }
 
 
-/* ================= MOBILE ================= */
+/* ================= DESKTOP FIX ================= */
+
+@media(min-width:992px){
+
+.services-grid{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+
+.service-card{
+padding:26px 18px;
+}
+
+/* Prevent overflow */
+.service-card img{
+max-width:100%;
+width:100%;
+height:200px;
+object-fit:contain;
+}
+
+}
+
+
+/* ================= MOBILE (UNCHANGED) ================= */
 
 @media(max-width:576px){
 
@@ -292,8 +323,11 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Passport')"><img src="./passport.png"><h6>Passport</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('PAN Card')"><img src="./pan.png"><h6>PAN</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Aadhar')"><img src="./aadhar.png"><h6>Aadhar</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Voter ID')"><img src="./voter.png"><h6>Voter</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -307,7 +341,9 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Birth Certificate')"><img src="./birth.png"><h6>Birth</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Marriage Certificate')"><img src="./marriage.png"><h6>Marriage</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Life Certificate')"><img src="./life.png"><h6>Life</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -323,9 +359,13 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Food License')"><img src="./food.png"><h6>Food</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Trade License')"><img src="./trade.png"><h6>Trade</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Labour License')"><img src="./labour.png"><h6>Labour</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('GST')"><img src="./gst.png"><h6>GST</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('MSME')"><img src="./msme.png"><h6>MSME</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -353,7 +393,9 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('TTD')"><img src="./ttd.png"><h6>TTD</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Bus')"><img src="./bus.png"><h6>Bus</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Train')"><img src="./train.png"><h6>Train</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -367,8 +409,11 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Scholarship')"><img src="./scholarship.png"><h6>Scholarship</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('TET')"><img src="./tet.png"><h6>TET</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('EAMCET')"><img src="./eamcet.png"><h6>EAMCET</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('ECET')"><img src="./ecet.png"><h6>ECET</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -382,6 +427,7 @@ font-size:1.6rem;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Utility')"><img src="./utility.png"><h6>Utility</h6><button class="service-btn">Click</button></div>
+
 <div class="service-card" onclick="wa('Jobs')"><img src="./job.png"><h6>Jobs</h6><button class="service-btn">Click</button></div>
 
 </div>
@@ -402,7 +448,7 @@ font-size:1.6rem;
 
 <p>📞 +91 7893845696</p>
 
-<p>📍 5-2-243 Tirumala Nagar, Moula Ali - 500040</p>
+<p>📍 5-2-243 Tirumala Nagar, Moula Ali, Hyderabad - 500040</p>
 
 <a href="https://maps.google.com/?q=KS+Digital+Services+Moula+Ali" target="_blank">
 📍 Get Directions
@@ -445,12 +491,9 @@ mainPages[i].classList.add('active');
 
 mainIndex = i;
 
-/* Reset sub tabs when switching main */
 initSubTabs(mainPages[i]);
 }
 
-
-/* Click */
 mainTabs.forEach((b,i)=>{
 b.onclick = ()=> showMain(i);
 });
@@ -470,7 +513,6 @@ currentSubPages = container.querySelectorAll('.sub-content');
 
 currentSubIndex = 0;
 
-/* Reset */
 currentSubBtns.forEach(b=>b.classList.remove('active'));
 currentSubPages.forEach(p=>p.classList.remove('active'));
 
@@ -479,7 +521,6 @@ currentSubBtns[0].classList.add('active');
 currentSubPages[0].classList.add('active');
 }
 
-/* Click */
 currentSubBtns.forEach((b,i)=>{
 b.onclick = ()=> showSub(i);
 });
@@ -501,7 +542,7 @@ currentSubIndex = i;
 }
 
 
-/* ================= SWIPE HANDLING ================= */
+/* ================= SWIPE ================= */
 
 let startX = 0;
 
@@ -515,49 +556,36 @@ document.addEventListener('touchend',e=>{
 let endX = e.changedTouches[0].clientX;
 let diff = startX - endX;
 
-/* Small swipe = ignore */
 if(Math.abs(diff) < 70) return;
 
 
-/* ========== SWIPE LEFT (NEXT) ========== */
+/* NEXT */
 
 if(diff > 0){
 
-/* 1️⃣ Try Sub Tab First */
 if(currentSubBtns.length && currentSubIndex < currentSubBtns.length-1){
-
 showSub(currentSubIndex+1);
 return;
-
 }
 
-/* 2️⃣ Then Main Tab */
 if(mainIndex < mainPages.length-1){
-
 showMain(mainIndex+1);
-
 }
 
 }
 
 
-/* ========== SWIPE RIGHT (PREVIOUS) ========== */
+/* PREVIOUS */
 
 if(diff < 0){
 
-/* 1️⃣ Try Sub Tab First */
 if(currentSubBtns.length && currentSubIndex > 0){
-
 showSub(currentSubIndex-1);
 return;
-
 }
 
-/* 2️⃣ Then Main Tab */
 if(mainIndex > 0){
-
 showMain(mainIndex-1);
-
 }
 
 }
@@ -565,9 +593,7 @@ showMain(mainIndex-1);
 },{passive:true});
 
 
-/* ================= INIT ================= */
-
-/* Initialize first main tab */
+/* INIT */
 showMain(0);
 
 </script>
