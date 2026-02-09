@@ -36,7 +36,7 @@ color:#1d4ed8 !important;
 font-size:1.4rem;
 }
 
-/* MAIN TABS */
+/* ================= MAIN TABS ================= */
 
 .tabs-wrapper{
 position:sticky;
@@ -70,37 +70,52 @@ background:#2563eb;
 color:white;
 }
 
-/* SUB TABS */
+
+/* ================= SUB TABS ================= */
 
 .sub-tabs{
 display:flex;
-gap:8px;
+gap:10px;
 overflow-x:auto;
-padding:8px 0;
+padding:10px;
 margin-bottom:25px;
+justify-content:center;
+
+/* Different color bar */
+background:linear-gradient(135deg,#dcfce7,#ecfdf5);
+border:1px solid #86efac;
+border-radius:14px;
 }
 
 .sub-tabs::-webkit-scrollbar{display:none}
 
 .sub-tabs button{
 border:none;
-background:#dbeafe;
-padding:8px 14px;
+background:#bbf7d0;
+padding:8px 16px;
 border-radius:20px;
 font-weight:600;
-color:#1e40af;
+color:#065f46;
+transition:.2s;
+}
+
+.sub-tabs button:hover{
+background:#86efac;
 }
 
 .sub-tabs button.active{
-background:#2563eb;
+background:#16a34a;
 color:white;
+box-shadow:0 0 8px rgba(22,163,74,.5);
 }
 
-/* SECTION */
+
+/* ================= SECTION ================= */
 
 .section{padding:40px 15px}
 
-/* VISIBILITY */
+
+/* ================= VISIBILITY ================= */
 
 .tab-content{display:none}
 .tab-content.active{display:block}
@@ -108,7 +123,8 @@ color:white;
 .sub-content{display:none}
 .sub-content.active{display:block}
 
-/* GRID */
+
+/* ================= GRID ================= */
 
 .services-grid{
 display:grid;
@@ -116,7 +132,8 @@ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:22px;
 }
 
-/* CARD */
+
+/* ================= CARD ================= */
 
 .service-card{
 background:white;
@@ -133,6 +150,7 @@ box-shadow:0 6px 18px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
+
 /* ICON (TABLET DEFAULT) */
 
 .service-card img{
@@ -141,6 +159,7 @@ height:190px;
 object-fit:contain;
 margin-bottom:8px;
 }
+
 
 /* BUTTON */
 
@@ -155,7 +174,8 @@ color:white;
 font-weight:600;
 }
 
-/* DESKTOP */
+
+/* ================= DESKTOP ================= */
 
 @media(min-width:992px){
 
@@ -174,7 +194,8 @@ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
 }
 
-/* MOBILE - 2 CARDS PER ROW */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:576px){
 
@@ -188,7 +209,7 @@ grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
 
-/* Smaller cards */
+/* Compact cards */
 .service-card{
 padding:10px 6px;
 border-radius:10px;
@@ -201,13 +222,11 @@ height:115px;
 margin-bottom:4px;
 }
 
-/* Smaller title */
 .service-card h6{
 font-size:.8rem;
 margin-bottom:4px;
 }
 
-/* Smaller button */
 .service-btn{
 font-size:.7rem;
 padding:3px 8px;
@@ -215,7 +234,8 @@ padding:3px 8px;
 
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
 background:#1e293b;
@@ -230,7 +250,8 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* WHATSAPP */
+
+/* ================= WHATSAPP ================= */
 
 .whatsapp{
 position:fixed;
@@ -280,7 +301,7 @@ font-size:1.6rem;
 <div class="container">
 
 
-<!-- CITIZEN -->
+<!-- ================= CITIZEN ================= -->
 
 <div class="tab-content active" id="citizen">
 
@@ -298,21 +319,13 @@ font-size:1.6rem;
 
 <div class="services-grid">
 
-<div class="service-card" onclick="wa('Passport')">
-<img src="./passport.png"><h6>Passport</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('Passport')"><img src="./passport.png"><h6>Passport</h6><button class="service-btn">Click</button></div>
 
-<div class="service-card" onclick="wa('PAN Card')">
-<img src="./pan.png"><h6>PAN Card</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('PAN Card')"><img src="./pan.png"><h6>PAN Card</h6><button class="service-btn">Click</button></div>
 
-<div class="service-card" onclick="wa('Aadhar Update')">
-<img src="./aadhar.png"><h6>Aadhar</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('Aadhar Update')"><img src="./aadhar.png"><h6>Aadhar</h6><button class="service-btn">Click</button></div>
 
-<div class="service-card" onclick="wa('Voter ID')">
-<img src="./voter.png"><h6>Voter ID</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('Voter ID')"><img src="./voter.png"><h6>Voter ID</h6><button class="service-btn">Click</button></div>
 
 </div>
 </div>
@@ -324,17 +337,11 @@ font-size:1.6rem;
 
 <div class="services-grid">
 
-<div class="service-card" onclick="wa('Birth Certificate')">
-<img src="./birth.png"><h6>Birth</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('Birth Certificate')"><img src="./birth.png"><h6>Birth</h6><button class="service-btn">Click</button></div>
 
-<div class="service-card" onclick="wa('Marriage Certificate')">
-<img src="./marriage.png"><h6>Marriage</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('Marriage Certificate')"><img src="./marriage.png"><h6>Marriage</h6><button class="service-btn">Click</button></div>
 
-<div class="service-card" onclick="wa('Life Certificate')">
-<img src="./life.png"><h6>Life</h6><button class="service-btn">Click</button>
-</div>
+<div class="service-card" onclick="wa('Life Certificate')"><img src="./life.png"><h6>Life</h6><button class="service-btn">Click</button></div>
 
 </div>
 </div>
@@ -342,7 +349,7 @@ font-size:1.6rem;
 </div>
 
 
-<!-- LICENSE -->
+<!-- ================= LICENSE ================= -->
 
 <div class="tab-content" id="license">
 
@@ -362,7 +369,7 @@ font-size:1.6rem;
 </div>
 
 
-<!-- OTHER -->
+<!-- ================= OTHER ================= -->
 
 <div class="tab-content" id="other">
 
