@@ -402,7 +402,7 @@ font-size:1.6rem;
 
 <p>📞 +91 7893845696</p>
 
-<p>📍 5-2-243 Tirumala Nagar, Moula Ali, Hyderabad - 500040</p>
+<p>📍 5-2-243 Tirumala Nagar, Moula Ali - 500040</p>
 
 <a href="https://maps.google.com/?q=KS+Digital+Services+Moula+Ali" target="_blank">
 📍 Get Directions
@@ -418,7 +418,7 @@ font-size:1.6rem;
 
 <script>
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 
 function wa(service){
 window.open(
@@ -428,12 +428,12 @@ window.open(
 }
 
 
-/* MAIN TABS + SWIPE */
+/* ================= MAIN TABS ================= */
 
-const mainTabs=document.querySelectorAll('.tab-btn');
-const mainPages=document.querySelectorAll('.tab-content');
+const mainTabs = document.querySelectorAll('.tab-btn');
+const mainPages = document.querySelectorAll('.tab-content');
 
-let mainIndex=0;
+let mainIndex = 0;
 
 function showMain(i){
 
@@ -443,102 +443,132 @@ mainPages.forEach(p=>p.classList.remove('active'));
 mainTabs[i].classList.add('active');
 mainPages[i].classList.add('active');
 
-mainIndex=i;
+mainIndex = i;
+
+/* Reset sub tabs when switching main */
+initSubTabs(mainPages[i]);
 }
 
+
+/* Click */
 mainTabs.forEach((b,i)=>{
-b.onclick=()=>showMain(i);
+b.onclick = ()=> showMain(i);
 });
 
 
-/* SUB TABS */
+/* ================= SUB TABS ================= */
 
-function setupSub(container){
+let currentSubIndex = 0;
+let currentSubBtns = [];
+let currentSubPages = [];
 
-const btns=container.querySelectorAll('.sub-btn');
-const pages=container.querySelectorAll('.sub-content');
 
-let index=0;
+function initSubTabs(container){
 
-function show(i){
+currentSubBtns = container.querySelectorAll('.sub-btn');
+currentSubPages = container.querySelectorAll('.sub-content');
 
-btns.forEach(b=>b.classList.remove('active'));
-pages.forEach(p=>p.classList.remove('active'));
+currentSubIndex = 0;
 
-btns[i].classList.add('active');
-pages[i].classList.add('active');
+/* Reset */
+currentSubBtns.forEach(b=>b.classList.remove('active'));
+currentSubPages.forEach(p=>p.classList.remove('active'));
 
-index=i;
+if(currentSubBtns.length){
+currentSubBtns[0].classList.add('active');
+currentSubPages[0].classList.add('active');
 }
 
-btns.forEach((b,i)=>{
-b.onclick=()=>show(i);
-});
-
-
-let startX=0;
-
-container.addEventListener('touchstart',e=>{
-startX=e.touches[0].clientX;
-});
-
-container.addEventListener('touchend',e=>{
-
-let endX=e.changedTouches[0].clientX;
-let diff=startX-endX;
-
-/* SUB → MAIN TRANSITION */
-
-if(Math.abs(diff)>60){
-
-if(diff>0){
-
-if(index<pages.length-1) show(index+1);
-else if(mainIndex<mainPages.length-1) showMain(mainIndex+1);
-
-}
-
-if(diff<0){
-
-if(index>0) show(index-1);
-else if(mainIndex>0) showMain(mainIndex-1);
-
-}
-
-}
-
+/* Click */
+currentSubBtns.forEach((b,i)=>{
+b.onclick = ()=> showSub(i);
 });
 
 }
 
 
-/* INIT */
+function showSub(i){
 
-setupSub(mainPages[0]); // citizen
-setupSub(mainPages[2]); // other
+if(!currentSubBtns.length) return;
+
+currentSubBtns.forEach(b=>b.classList.remove('active'));
+currentSubPages.forEach(p=>p.classList.remove('active'));
+
+currentSubBtns[i].classList.add('active');
+currentSubPages[i].classList.add('active');
+
+currentSubIndex = i;
+}
 
 
-/* MAIN SWIPE */
+/* ================= SWIPE HANDLING ================= */
 
-let startX=0;
+let startX = 0;
 
 document.addEventListener('touchstart',e=>{
-startX=e.touches[0].clientX;
-});
+startX = e.touches[0].clientX;
+},{passive:true});
+
 
 document.addEventListener('touchend',e=>{
 
-let endX=e.changedTouches[0].clientX;
-let diff=startX-endX;
+let endX = e.changedTouches[0].clientX;
+let diff = startX - endX;
 
-if(Math.abs(diff)>80){
+/* Small swipe = ignore */
+if(Math.abs(diff) < 70) return;
 
-if(diff>0 && mainIndex<mainPages.length-1) showMain(mainIndex+1);
-if(diff<0 && mainIndex>0) showMain(mainIndex-1);
+
+/* ========== SWIPE LEFT (NEXT) ========== */
+
+if(diff > 0){
+
+/* 1️⃣ Try Sub Tab First */
+if(currentSubBtns.length && currentSubIndex < currentSubBtns.length-1){
+
+showSub(currentSubIndex+1);
+return;
 
 }
 
-});
+/* 2️⃣ Then Main Tab */
+if(mainIndex < mainPages.length-1){
+
+showMain(mainIndex+1);
+
+}
+
+}
+
+
+/* ========== SWIPE RIGHT (PREVIOUS) ========== */
+
+if(diff < 0){
+
+/* 1️⃣ Try Sub Tab First */
+if(currentSubBtns.length && currentSubIndex > 0){
+
+showSub(currentSubIndex-1);
+return;
+
+}
+
+/* 2️⃣ Then Main Tab */
+if(mainIndex > 0){
+
+showMain(mainIndex-1);
+
+}
+
+}
+
+},{passive:true});
+
+
+/* ================= INIT ================= */
+
+/* Initialize first main tab */
+showMain(0);
 
 </script>
 
