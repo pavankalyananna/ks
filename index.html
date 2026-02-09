@@ -37,14 +37,15 @@ margin:auto;
 font-size:1.4rem;
 }
 
-/* TABS */
+/* ================= TABS BAR ================= */
 
 .service-tabs-wrapper{
 position:sticky;
 top:56px;
 z-index:999;
-background:#fff;
-border-bottom:1px solid #e5e7eb;
+background:linear-gradient(135deg,#dbeafe,#eff6ff);
+border-bottom:2px solid #2563eb;
+box-shadow:0 4px 12px rgba(37,99,235,.15);
 }
 
 .service-tabs{
@@ -53,25 +54,40 @@ justify-content:center;
 gap:6px;
 overflow-x:auto;
 white-space:nowrap;
-padding:6px;
+padding:8px;
 }
 
 .service-tabs::-webkit-scrollbar{display:none}
 
+/* TAB BUTTON */
+
 .service-tabs button{
 border:none;
-background:none;
-padding:10px 16px;
+background:rgba(255,255,255,.7);
+padding:10px 18px;
 font-weight:600;
 color:#1e40af;
 cursor:pointer;
-border-radius:8px;
+border-radius:10px;
 flex-shrink:0;
+transition:.25s;
+border:1px solid transparent;
 }
+
+/* HOVER */
+
+.service-tabs button:hover{
+background:#dbeafe;
+transform:translateY(-1px);
+}
+
+/* ACTIVE */
 
 .service-tabs button.active{
 background:#2563eb;
 color:white;
+box-shadow:0 0 10px rgba(37,99,235,.6);
+border-color:#1d4ed8;
 }
 
 @media(max-width:768px){
@@ -249,7 +265,7 @@ height:180px;
 <!-- TABS -->
 
 <div class="service-tabs-wrapper">
-<div class="service-tabs" id="tabs">
+<div class="service-tabs">
 
 <button class="tab-btn active" data-tab="govt">Govt ID</button>
 <button class="tab-btn" data-tab="cert">Certificates</button>
@@ -490,7 +506,7 @@ height:180px;
 
 <div class="category" id="contactTab">
 
-<h4 class="text-center mb-4">Contact & Reviews</h4>
+<h4 class="text-center mb-4">Contact</h4>
 
 <div class="box text-center">
 
@@ -503,20 +519,6 @@ WhatsApp Now
 </a>
 
 </div>
-
-<div class="box mb-4">
-
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin"
-width="100%"
-height="300"
-style="border:0;"
-loading="lazy">
-</iframe>
-
-</div>
-
-
 
 </div>
 
@@ -575,4 +577,3 @@ window.scrollTo({top:0,behavior:'smooth'});
 
 </body>
 </html>
-
