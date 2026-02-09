@@ -11,7 +11,7 @@
 
 <style>
 
-/* BASE */
+/* ================= BASE ================= */
 
 html{scroll-behavior:smooth}
 
@@ -22,7 +22,7 @@ color:#1f2933;
 margin:0;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 .navbar{
 background:#fff;
@@ -37,7 +37,7 @@ margin:auto;
 font-size:1.4rem;
 }
 
-/* ================= TABS BAR ================= */
+/* ================= TABS ================= */
 
 .service-tabs-wrapper{
 position:sticky;
@@ -59,8 +59,6 @@ padding:8px;
 
 .service-tabs::-webkit-scrollbar{display:none}
 
-/* TAB BUTTON */
-
 .service-tabs button{
 border:none;
 background:rgba(255,255,255,.7);
@@ -71,34 +69,17 @@ cursor:pointer;
 border-radius:10px;
 flex-shrink:0;
 transition:.25s;
-border:1px solid transparent;
 }
-
-/* HOVER */
-
-.service-tabs button:hover{
-background:#dbeafe;
-transform:translateY(-1px);
-}
-
-/* ACTIVE */
 
 .service-tabs button.active{
 background:#2563eb;
 color:white;
 box-shadow:0 0 10px rgba(37,99,235,.6);
-border-color:#1d4ed8;
 }
 
-@media(max-width:768px){
-.service-tabs{justify-content:flex-start}
-}
-
-/* SECTION */
+/* ================= SECTION ================= */
 
 .section{padding:40px 15px}
-
-/* CATEGORIES */
 
 .category{display:none}
 .category.active{display:block}
@@ -109,7 +90,7 @@ padding-left:12px;
 margin-bottom:20px;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 
 .services-grid{
 display:grid;
@@ -117,7 +98,7 @@ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:22px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .service-card{
 background:white;
@@ -134,8 +115,6 @@ box-shadow:0 8px 22px rgba(0,0,0,.15);
 transform:translateY(-4px);
 }
 
-/* ICON */
-
 .service-card img{
 width:180px;
 height:190px;
@@ -148,7 +127,7 @@ transition:.3s;
 transform:scale(1.1);
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 .service-btn{
 margin-top:6px;
@@ -159,15 +138,13 @@ border-radius:20px;
 background:#2563eb;
 color:white;
 font-weight:600;
-transition:.2s;
 }
 
 .service-btn:hover{
 background:#1e40af;
-transform:scale(1.05);
 }
 
-/* TAGS */
+/* ================= TAGS ================= */
 
 .service-tags{
 margin-top:6px;
@@ -195,14 +172,12 @@ padding:3px 9px;
 border-radius:10px;
 }
 
-/* POPULAR */
-
 .popular-card{
 border:2px solid #fb923c;
 box-shadow:0 0 14px rgba(251,146,60,.35);
 }
 
-/* BOX */
+/* ================= CONTACT ================= */
 
 .box{
 background:white;
@@ -211,7 +186,7 @@ border-radius:12px;
 padding:25px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
 background:#f1f5f9;
@@ -219,7 +194,7 @@ padding:25px;
 text-align:center;
 }
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 
 .whatsapp{
 position:fixed;
@@ -236,7 +211,7 @@ justify-content:center;
 font-size:1.6rem;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:576px){
 
@@ -265,15 +240,15 @@ height:180px;
 <!-- TABS -->
 
 <div class="service-tabs-wrapper">
-<div class="service-tabs">
+<div class="service-tabs" id="tabs">
 
 <button class="tab-btn active" data-tab="govt">Govt ID</button>
 <button class="tab-btn" data-tab="cert">Certificates</button>
 <button class="tab-btn" data-tab="business">Licenses</button>
 <button class="tab-btn" data-tab="ticket">Ticket Booking</button>
-<button class="tab-btn" data-tab="exam">CET Apply</button>
+<button class="tab-btn" data-tab="exam">Exam & Edu</button>
 <button class="tab-btn" data-tab="utility">Utility</button>
-<button class="tab-btn" data-tab="contactTab">Contact</button>
+<button class="tab-btn" data-tab="contact">Contact</button>
 
 </div>
 </div>
@@ -281,15 +256,15 @@ height:180px;
 <br><br>
 
 
-<section class="section">
+<section class="section" id="contentArea">
 <div class="container">
 
 
-<!-- GOVT -->
+<!-- ================= GOVT ================= -->
 
 <div class="category active" id="govt">
 
-<h4>Citizen Services</h4>
+<h4>Government ID</h4>
 
 <div class="services-grid">
 
@@ -323,21 +298,18 @@ height:180px;
 </div>
 </div>
 
-<div class="service-card popular-card" onclick="wa('Voter ID')">
+<div class="service-card" onclick="wa('Voter ID')">
 <img src="./voter.png">
 <h6>Voter ID</h6>
 <button class="service-btn">Click Here</button>
-<div class="service-tags">
-<span class="popular-badge">POPULAR</span>
-<span class="sameday-badge">SAME DAY</span>
-</div>
+<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 </div>
 </div>
 
 
-<!-- CERTIFICATES -->
+<!-- ================= CERTIFICATES ================= -->
 
 <div class="category" id="cert">
 
@@ -346,73 +318,57 @@ height:180px;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Birth Certificate')">
-<img src="./birth.png">
-<h6>Birth Certificate</h6>
+<img src="./birth.png"><h6>Birth Certificate</h6>
 <button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Marriage Certificate')">
-<img src="./marriage.png">
-<h6>Marriage Certificate</h6>
+<img src="./marriage.png"><h6>Marriage Certificate</h6>
 <button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 <div class="service-card" onclick="wa('Life Certificate')">
-<img src="./life.png">
-<h6>Life Certificate</h6>
+<img src="./life.png"><h6>Life Certificate</h6>
 <button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
 </div>
 
 </div>
 </div>
 
 
-<!-- BUSINESS -->
+<!-- ================= BUSINESS ================= -->
 
 <div class="category" id="business">
 
-<h4>Business & Licenses</h4>
+<h4>Licenses & Business</h4>
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Food License')">
-<img src="./food.png"><h6>Food License</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./food.png"><h6>Food License</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('Trade License')">
-<img src="./trade.png"><h6>Trade License</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./trade.png"><h6>Trade License</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('Labour License')">
-<img src="./labour.png"><h6>Labour License</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./labour.png"><h6>Labour License</h6><button class="service-btn">Click Here</button>
 </div>
 
-<div class="service-card" onclick="wa('GST Registration')">
-<img src="./gst.png"><h6>GST Return Filing</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<div class="service-card" onclick="wa('GST Filing')">
+<img src="./gst.png"><h6>GST Filing</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('UDYAM MSME')">
-<img src="./msme.png"><h6>UDYAM / MSME</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./msme.png"><h6>UDYAM / MSME</h6><button class="service-btn">Click Here</button>
 </div>
 
 </div>
 </div>
 
 
-<!-- TICKET -->
+<!-- ================= TICKET ================= -->
 
 <div class="category" id="ticket">
 
@@ -421,64 +377,50 @@ height:180px;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('TTD Booking')">
-<img src="./ttd.png"><h6>TTD Booking</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./ttd.png"><h6>TTD Booking</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('Bus Tickets')">
-<img src="./bus.png"><h6>Bus Tickets</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./bus.png"><h6>Bus Tickets</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('Train Tickets')">
-<img src="./train.png"><h6>Train Tickets</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./train.png"><h6>Train Tickets</h6><button class="service-btn">Click Here</button>
 </div>
 
 </div>
 </div>
 
 
-<!-- EXAM -->
+<!-- ================= EXAM ================= -->
 
 <div class="category" id="exam">
 
-<h4>CET Applications</h4>
+<h4>Exam & Education</h4>
 
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Scholarship')">
-<img src="./scholarship.png"><h6>Scholarship</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./scholarship.png"><h6>Scholarship</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('TET NET')">
-<img src="./tet.png"><h6>TET / NET</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./tet.png"><h6>TET / NET</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('EAMCET')">
-<img src="./eamcet.png"><h6>EAMCET / Polycet</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./eamcet.png"><h6>EAMCET / Polycet</h6><button class="service-btn">Click Here</button>
 </div>
 
-<div class="service-card" onclick="wa('ECET')">
-<img src="./ecet.png"><h6>ECET / ICET</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<div class="service-card" onclick="wa('ECET ICET')">
+<img src="./ecet.png"><h6>ECET / ICET</h6><button class="service-btn">Click Here</button>
 </div>
 
 </div>
 </div>
 
 
-<!-- UTILITY -->
+<!-- ================= UTILITY ================= -->
 
 <div class="category" id="utility">
 
@@ -487,47 +429,32 @@ height:180px;
 <div class="services-grid">
 
 <div class="service-card" onclick="wa('Utility Services')">
-<img src="./utility.png"><h6>Utility Services</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./utility.png"><h6>Utility Services</h6><button class="service-btn">Click Here</button>
 </div>
 
 <div class="service-card" onclick="wa('Job Applications')">
-<img src="./job.png"><h6>Job Applications</h6>
-<button class="service-btn">Click Here</button>
-<div class="service-tags"><span class="sameday-badge">SAME DAY</span></div>
+<img src="./job.png"><h6>Job Applications</h6><button class="service-btn">Click Here</button>
 </div>
 
 </div>
 </div>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
-<div class="category" id="contactTab">
+<div class="category" id="contact">
 
-<h4 class="text-center mb-4">Contact & Reviews</h4>
+<h4 class="text-center mb-4">Contact</h4>
 
 <div class="box text-center">
 
 <p>📞 +91 7893845696</p>
-<p>📍 5-2-243 Tirumala Nagar , Moula Ali, Medchal-Malkajgiri , 500040. </p>
+<p>📍 Moula Ali, Hyderabad</p>
 <p>⏰ 7 AM – 9:30 PM</p>
 
 <a href="https://wa.me/7893845696" class="btn btn-success w-100 mt-3">
 WhatsApp Now
 </a>
-
-</div>
-  <div class="box mb-4">
-
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.88464227770615!2d78.5642437!3d17.4523285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9b9420b705e1%3A0x79df58000493b66a!2sKS%20DIGITAL%20SERVICES!5e0!3m2!1sen!2sin!4v1770574090578!5m2!1sen!2sin"
-width="100%"
-height="300"
-style="border:0;"
-loading="lazy">
-</iframe>
 
 </div>
 
@@ -548,7 +475,7 @@ loading="lazy">
 
 <script>
 
-/* WHATSAPP */
+/* ================= WHATSAPP ================= */
 
 function wa(service){
 
@@ -562,29 +489,65 @@ window.open(
 }
 
 
-/* TABS */
+/* ================= TABS ================= */
 
 const tabs = document.querySelectorAll('.tab-btn');
 const categories = document.querySelectorAll('.category');
 
-tabs.forEach(btn=>{
+let currentIndex = 0;
 
-btn.addEventListener('click',()=>{
+/* Activate */
 
-tabs.forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
+function activateTab(i){
 
+if(i<0 || i>=tabs.length) return;
+
+tabs.forEach(t=>t.classList.remove('active'));
 categories.forEach(c=>c.classList.remove('active'));
 
-document.getElementById(btn.dataset.tab).classList.add('active');
+tabs[i].classList.add('active');
+document.getElementById(tabs[i].dataset.tab).classList.add('active');
+
+currentIndex = i;
 
 window.scrollTo({top:0,behavior:'smooth'});
 
+}
+
+/* Click */
+
+tabs.forEach((btn,i)=>{
+btn.addEventListener('click',()=>activateTab(i));
 });
 
+
+/* ================= SWIPE ================= */
+
+let startX=0,endX=0;
+const area=document.getElementById('contentArea');
+
+area.addEventListener('touchstart',e=>{
+startX=e.touches[0].clientX;
 });
+
+area.addEventListener('touchend',e=>{
+endX=e.changedTouches[0].clientX;
+handleSwipe();
+});
+
+function handleSwipe(){
+
+let diff=startX-endX;
+
+if(Math.abs(diff)<60) return;
+
+if(diff>0) activateTab(currentIndex+1);
+if(diff<0) activateTab(currentIndex-1);
+
+}
 
 </script>
 
 </body>
 </html>
+
